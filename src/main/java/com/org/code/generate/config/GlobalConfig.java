@@ -14,6 +14,33 @@ public class GlobalConfig {
     private String[] prefix;//表前缀
     private String author="";//作者
     private String entryClass;
+    private String dtoPre;
+    private String form="";//查询form
+    private String columnAlias;
+
+    public String getColumnAlias() {
+        return columnAlias;
+    }
+
+    public void setColumnAlias(String columnAlias) {
+        this.columnAlias = columnAlias;
+    }
+
+    public String getForm() {
+        return form;
+    }
+
+    public void setForm(String form) {
+        this.form = form;
+    }
+
+    public String getDtoPre() {
+        return dtoPre;
+    }
+
+    public void setDtoPre(String dtoPre) {
+        this.dtoPre = dtoPre;
+    }
 
     public String getEntryClass() {
         return entryClass;

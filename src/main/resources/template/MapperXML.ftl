@@ -4,7 +4,9 @@
 
     <resultMap id="BaseResultMap"
                type="${entryClass}">
+
         <#list table.fields as field>
-            <result column="${field.name}" property="${field.propertyName}"/>
+            <result column="${columnAlias}_${field.name}" property="${dtoPre}${field.propertyName}"/>
         </#list>
+
     </resultMap>

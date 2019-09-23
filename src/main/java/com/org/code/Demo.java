@@ -9,17 +9,23 @@ public class Demo {
         GlobalConfig globalConfig = new GlobalConfig();//全局配置
 //        globalConfig.setTemplatepath("/template/style1");//自定义模板路径
         globalConfig.setAuthor("xiexiangyi");
-        globalConfig.setEntityPackage("com.giveu.contract.bean.fn.general.resp");//实体包名
-        globalConfig.setEntryClass("com.giveu.contract.bean.fn.general.resp.CsCreditExtDto");
         globalConfig.setMapperPackage("com.giveu.contract.module.fn.mapper");//dao包名
         globalConfig.setServicePackage("com.xinhuo.demo.service");//service包名
         globalConfig.setServiceImplPackage("com.xinhuo.demo.service.impl");
         globalConfig.setControllerPackage("com.xinhuo.demo.controller");
-        globalConfig.setMapperxml("");
+        globalConfig.setMapperxml("xml");
+        globalConfig.setForm("form");
 //        globalConfig.setTableNames(new String[]{"cs_credit","cs_credit_ext"});//需要生成的实体
-        globalConfig.setTableNames(new String[]{"cs_credit"});//需要生成的实体
         globalConfig.setPrefix(new String[]{"pre_"});//生成的实体移除前缀
 //        globalConfig.setOutputDir("D://code/");//文件输出路径，不配置的话默认输出当前项目的resources/code目录下
+        //要修改的参数
+        globalConfig.setEntityPackage("com.giveu.contract.bean.fn.general.resp");//实体包名
+        globalConfig.setEntryClass("com.giveu.contract.bean.fn.general.resp.CsProductSnapshot");
+//        globalConfig.setTableNames(new String[]{"p"});
+        globalConfig.setTableNames(new String[]{"cs_product_snapshot"});//需要生成的实体
+        globalConfig.setDtoPre("");
+        globalConfig.setColumnAlias("u");
+
 
         DataSourceConfig dsc = new DataSourceConfig();//数据库配置
         dsc.setDriverName("oracle.jdbc.driver.OracleDriver");

@@ -41,6 +41,9 @@ public class CodeGenerate implements ICallBack {
         data.put("date", CommonUtils.getFormatTime("yyyy-MM-dd", new Date()));//创建时间
         data.put("table", tableInfo);//表信息
         data.put("entryClass", globalConfig.getEntryClass());
+        data.put("dtoPre",globalConfig.getDtoPre());
+        data.put("tableName",globalConfig.getTableNames()[0]);
+        data.put("columnAlias",globalConfig.getColumnAlias());
         boolean isKeyFlag = false;
         for (TableField field : tableInfo.getFields()) {
             if (field.isKeyIdentityFlag()) {//获取主键字段信息
@@ -74,6 +77,7 @@ public class CodeGenerate implements ICallBack {
                 codeFactory.setGlobalConfig(globalConfig);
                 codeFactory.invoke("entityTemplate.ftl", "entity");
                 codeFactory.invoke("MapperXML.ftl", "mapperxml");
+                codeFactory.invoke("Form.ftl", "form");
 
 //                codeFactory.invoke("controllerTemplate.ftl", "controller");
 //                codeFactory.invoke("serviceTemplate.ftl", "service");

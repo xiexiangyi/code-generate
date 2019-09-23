@@ -128,6 +128,12 @@ public class CodeFactory
         path.append("/");
         //文件名
         path.append(entityName).append(".xml");
+      }else if("form".equals(codeType)){
+        //包名 package.path
+        path.append(globalConfig.getMapperxml());
+        path.append("/");
+        //文件名
+        path.append(entityName+"Dto").append(".java");
       }
 
       else{
@@ -170,6 +176,7 @@ public class CodeFactory
     serviceImpl,
     mapper,
     mapperxml,
+    form,
     entity;
 
     private String type;
